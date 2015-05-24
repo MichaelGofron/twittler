@@ -8,18 +8,35 @@
     <script>
 
       $(document).ready(function(){
+
+        // function must replace old tweets when accessing it or
+        // must keep track of last position where the tweets were in array
+        var lastIndex = 0;
+        function viewNewTweets(){
+          var index = streams.home.length - 1;
+          var tempIndex = index;
+          while(index > lastIndex){
+            var tweet = streams.home[index];
+            var $tweet = $('<div></div>');
+            $tweet.text('@' + tweet.user + ': ' + tweet.message + " " + tweet.created_at);
+            $tweet.appendTo($body);
+            index -= 1;
+          }
+          lastIndex = tempIndex;
+          console.log("calling new Tweets");
+        }
+
+        function addButton(){
+          var $button = $('<button>Refresh</button>');
+          $button.on("click",viewNewTweets);
+          $button.prependTo($body);
+        }
+
         var $body = $('body');
         $body.html('');
 
-        var index = streams.home.length - 1;
-        while(index >= 0){
-          var tweet = streams.home[index];
-          var $tweet = $('<div></div>');
-          $tweet.text('@' + tweet.user + ': ' + tweet.message);
-          $tweet.appendTo($body);
-          index -= 1;
-        }
-
+        viewNewTweets();
+        addButton();
       });
 
     </script>
