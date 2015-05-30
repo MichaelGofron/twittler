@@ -1,0 +1,30 @@
+.tweet{
+	display:inline;
+	background-color: #FAFAFA;
+	float: right;
+	width:100%;
+	height: 100px;
+	text-align: left;
+	font: 18px "Lato", sans-serif, serif;
+	border-style:none none solid none;
+}
+
+.tweet:hover{
+	background-color:#FFFFFF;
+}
+.tweet:active{
+	background-color: #E6E6E6;
+}
+#refresh{
+	background-color: #E3FFFF;
+	border: none none solid none;
+	width: 100%;
+	top: 0px;
+	font: 18px "Lato", sans-serif, serif;
+}
+#refresh:hover{
+	background-color: #F6FFFF;	
+}
+#refresh:active{
+	background-color: #D1FFFF;
+}
