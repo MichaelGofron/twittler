@@ -15,16 +15,16 @@
 .tweet:active{
 	background-color: #E6E6E6;
 }
-#refresh{
+.refresh{
 	background-color: #E3FFFF;
 	border: none none solid none;
 	width: 100%;
 	top: 0px;
 	font: 18px "Lato", sans-serif, serif;
 }
-#refresh:hover{
+.refresh:hover{
 	background-color: #F6FFFF;	
 }
-#refresh:active{
+.refresh:active{
 	background-color: #D1FFFF;
 }
